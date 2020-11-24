@@ -1,9 +1,10 @@
 import tensorflow.keras as keras
 from tensorflow.keras.models import load_model
 
+
 def create_conv_block(filter_num, inputs):
     outputs = keras.layers.BatchNormalization()(inputs)
-    outputs = keras.layers.Conv2D(32, 3, activation="relu")(outputs)
+    outputs = keras.layers.Conv2D(filter_num, 3, activation="relu")(outputs)
     outputs = keras.layers.MaxPooling2D()(outputs)
     return outputs
 
